@@ -1,0 +1,505 @@
+<Iceburg>
+	<append xpath="/items">
+<!-- Baby Animals -->
+		<!-- Baby Boar Damage -->
+		<item name="meleeHandanimalIceburgBabyBoar">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1"/>
+				<property name="DamageEntity" value="10"/>
+				<property name="DamageBlock" value="12"/>
+				<property name="Buff" value="buffInjuryBleedingZombie"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".4" tags="buffInjuryBleedingZombie"/>
+			</effect_group>
+		</item>
+
+		<!-- Baby Bear Damage -->
+		<item name="meleeHandanimalIceburgBabyBear">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="46"/>
+			<property class="Action0">
+				<property name="Delay" value="1.5"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1"/>
+				<property name="Sphere" value=".3"/>
+				<property name="DamageEntity" value="22"/>
+				<property name="DamageBlock" value="30"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInjuryStunned01"/>
+			</property>
+			<effect_group name="meleeHandAnimalBear" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
+				<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".4" tags="buffInjuryStunned01"/>
+			</effect_group>
+		</item>
+
+		<!-- Baby Wolf Damage -->
+		<item name="meleeHandanimalIceburgBabyWolf">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1"/>
+				<property name="DamageEntity" value="10"/>
+				<property name="DamageBlock" value="12"/>
+				<property name="Buff" value="buffInjuryBleedingZombie"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".4" tags="buffInjuryBleedingZombie"/>
+			</effect_group>
+		</item>
+
+		<!-- Baby Coyote Damage -->
+		<item name="meleeHandanimalIceburgBabyCoyote">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".7"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1"/>
+				<property name="DamageEntity" value="7"/>
+				<property name="DamageBlock" value="4"/>
+				<property name="Buff" value="buffInjuryBleedingZombie"/>
+			</property>
+			<effect_group name="meleeHandAnimalCoyote" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".30" tags="buffInjuryBleedingZombie"/>
+			</effect_group>
+		</item>
+
+		<!-- Baby Mountain Lion Damage -->
+		<item name="meleeHandanimalIceburgBabyMountainLion">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1"/>
+				<property name="DamageEntity" value="16"/>
+				<property name="DamageBlock" value="21"/>
+				<property name="Buff" value="buffInjuryBleedingZombie"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".5" tags="buffInjuryBleedingZombie"/>
+			</effect_group>
+		</item>
+
+		<!-- Baby Dire Wolf Damage -->
+		<item name="meleeHandanimalIceburgBabyDireWolf">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1"/>
+				<property name="DamageEntity" value="17"/>
+				<property name="DamageBlock" value="21"/>
+				<property name="Buff" value="buffInjuryBleedingZombie"/>
+			</property>
+			<effect_group name="meleeHandAnimalWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".5" tags="buffInjuryBleedingZombie"/>
+			</effect_group>
+		</item>
+
+		<!-- Baby Zombie Dog Damage -->
+		<item name="meleeHandanimalIceburgBabyZombieDog">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".7"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1"/>
+				<property name="DamageEntity" value="6"/>
+				<property name="DamageBlock" value="10"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInfectionCatch"/>
+			</property>
+			<effect_group name="meleeHandAnimalZombieDog" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".50" tags="buffInjuryBleedingZombie"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".15" tags="buffInfectionCatch"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/><!--InfectionRegular-->
+			</effect_group>
+		</item>
+
+		<!-- Baby Zombie Bear Damage -->
+		<item name="meleeHandanimalIceburgBabyZombieBear">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="1.3"/>
+				<property name="DamageEntity" value="37"/>
+				<property name="DamageBlock" value="60"/>
+				<property name="Buff" value="buffInjuryBleedingZombie,buffInjuryStunned01,buffInfectionCatch"/>
+			</property>
+			<effect_group name="meleeHandAnimalZombieBear" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
+				<passive_effect name="BuffProcChance" operation="base_set" value=".75" tags="buffInjuryBleedingZombie"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".20" tags="buffInfectionCatch"/>
+				<passive_effect name="BuffProcChance" operation="base_set" value=".40" tags="buffInjuryStunned01"/>
+				<triggered_effect trigger="onSelfDamagedOther" action="ModifyCVar" target="other" cvar="infectionZombieHit" operation="set" value="30"/><!--InfectionRegular-->
+			</effect_group>
+		</item>
+
+		<!-- Baby Snake Damage -->
+		<item name="meleeHandanimalIceburgBabySnake">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="55"/>
+			<property class="Action0">
+				<property name="Delay" value="2.5"/>
+				<property name="Range" value=".6"/>
+				<property name="DamageEntity" value="5"/>
+				<property name="DamageBlock" value="1"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgBabySnake" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Baby Zombie Vulture Damage -->
+		<item name="meleeHandAnimalIceburgBabyZombieVulture">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".7"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1.3"/>
+				<property name="DamageEntity" value="6"/>
+				<property name="DamageBlock" value="6"/>
+			</property>
+			<effect_group name="meleeHandAnimalIceburgBabyZombieVulture" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+			</effect_group>
+		</item>
+
+		<!-- Baby Zombie Vulture Radiated Damage -->
+		<item name="meleeHandAnimalIceburgBabyZombieVultureRadiated">
+			<property name="Extends" value="meleeHandAnimalZombieVulture"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".7"/>
+				<property name="Range" value="1.3"/>
+				<property name="DamageEntity" value="8"/>
+				<property name="DamageBlock" value="24"/>
+			</property>
+			<property class="Action1">
+				<property name="Class" value="Vomit"/>
+				<property name="Hitmask_override" value="Arrow"/>
+				<property name="Delay" value=".5"/>
+				<property name="Infinite_ammo" value="true"/>
+				<property name="Magazine_items" value="ammoProjectileVultureVomit"/>
+				<property name="Sound_warning" value="vulturevomitwarning"/>
+				<property name="Sound_start" value="vulturevomitattack"/>
+				<property name="Sound_repeat" value=""/>
+				<property name="Sound_end" value=""/>
+				<property name="Sound_empty" value=""/>
+				<property name="Sound_reload" value=""/>
+			</property>
+			<effect_group name="meleeHandAnimalIceburgBabyZombieVultureRadiated" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+				<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="6"/>
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="15"/>
+				<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+				<passive_effect name="MaxRange" operation="base_set" value="50"/>
+
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+			</effect_group>
+		</item>
+
+<!-- Teen Animals -->
+		<!-- Teen Boar Damage -->
+		<item name="meleeHandanimalIceburgTeenBoar">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1.3"/>
+				<property name="DamageEntity" value="10"/>
+				<property name="DamageBlock" value="12"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenBoar" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Teen Bear Damage -->
+		<item name="meleeHandanimalIceburgTeenBear">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="46"/>
+			<property class="Action0">
+				<property name="Delay" value="1.5"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="2.7"/>
+				<property name="Sphere" value=".3"/>
+				<property name="DamageEntity" value="23"/>
+				<property name="DamageBlock" value="30"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenBear" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Teen Wolf Damage -->
+		<item name="meleeHandanimalIceburgTeenWolf">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1.3"/>
+				<property name="DamageEntity" value="10"/>
+				<property name="DamageBlock" value="12"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Teen Coyote Damage -->
+		<item name="meleeHandanimalIceburgTeenCoyote">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".7"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1.05"/>
+				<property name="DamageEntity" value="8"/>
+				<property name="DamageBlock" value="4"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenCoyote" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Teen Mountain Lion Damage -->
+		<item name="meleeHandanimalIceburgTeenMountainLion">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="1.3"/>
+				<property name="DamageEntity" value="10"/>
+				<property name="DamageBlock" value="12"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenMountainLion" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Teen Dire Wolf Damage -->
+		<item name="meleeHandanimalIceburgTeenDireWolf">
+			<property name="Extends" value="meleeHandAnimalWolf"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Delay" value=".8"/> <!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="2.65"/>
+				<property name="DamageEntity" value="17"/>
+				<property name="DamageBlock" value="21"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenDireWolf" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Teen Zombie Dog Damage -->
+		<item name="meleeHandanimalIceburgTeenZombieDog">
+			<property name="Extends" value="meleeHandMaster"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="35"/>
+			<property class="Action0">
+				<property name="Range" value="1.24"/>
+				<property name="Delay" value=".7"/> <!-- obsolete if rounds per minute exists -->
+				<property name="DamageEntity" value="6"/>
+				<property name="DamageBlock" value="11"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenZombieDog" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="85"/>  A16 .7 -->
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+
+		<!-- Teen Zombie Bear Damage -->
+		<item name="meleeHandanimalIceburgTeenZombieBear">
+			<property name="Extends" value="meleeHandAnimalBear"/>
+			<property name="CreativeMode" value="None"/>
+			<property class="Action0">
+				<property name="Range" value="2.4"/>
+				<property name="DamageEntity" value="33"/>
+				<property name="DamageBlock" value="53"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenZombieBear" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="40"/>  A16 1.5 -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="10"><!--InfectionRegular-->
+					<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+				<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="1800"/><!--AbrasionRegular-->
+			</effect_group>
+		</item>
+
+		<!-- Teen Snake Damage -->
+		<item name="meleeHandanimalIceburgTeenSnake">
+			<property name="Extends" value="meleeHandAnimalSnake"/>
+			<property name="CreativeMode" value="None"/>
+			<property name="HoldType" value="55"/>
+			<property class="Action0">
+				<property name="Delay" value="2.5"/>
+				<property name="Range" value=".9"/>
+				<property name="DamageEntity" value="7"/>
+				<property name="DamageBlock" value="2"/>
+			</property>
+			<effect_group name="meleeHandanimalIceburgTeenSnake" tiered="false">
+				<passive_effect name="ModSlots" operation="base_set" value="0"/>
+				<!--<passive_effect name="AttacksPerMinute" operation="base_set" value="75"/>  A16 .8 -->
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+					weights=".11,.07,.07,.05,.29,.36,.11"/>
+			</effect_group>
+		</item>
+
+		<!-- Teen Zombie Vulture Damage -->
+			<item name="meleeHandAnimalIceburgTeenZombieVulture">
+				<property name="Extends" value="meleeHandMaster"/>
+				<property name="CreativeMode" value="None"/>
+				<property name="HoldType" value="35"/>
+				<property class="Action0">
+					<property name="Delay" value=".7"/> <!-- obsolete if rounds per minute exists -->
+					<property name="Range" value="1.3"/>
+					<property name="DamageEntity" value="6"/>
+					<property name="DamageBlock" value="6"/>
+				</property>
+				<effect_group name="meleeHandAnimalIceburgTeenZombieVulture" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".11,.07,.07,.05,.29,.36,.11"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+				</effect_group>
+			</item>
+
+		<!-- Teen Zombie Vulture Radiated Damage -->
+			<item name="meleeHandAnimalIceburgTeenZombieVultureRadiated">
+				<property name="Extends" value="meleeHandAnimalZombieVulture"/>
+				<property name="CreativeMode" value="None"/>
+				<property class="Action0">
+					<property name="Delay" value=".7"/>
+					<property name="Range" value="1.3"/>
+					<property name="DamageEntity" value="8"/>
+					<property name="DamageBlock" value="24"/>
+				</property>
+				<property class="Action1">
+					<property name="Class" value="Vomit"/>
+					<property name="Hitmask_override" value="Arrow"/>
+					<property name="Delay" value=".5"/>
+					<property name="Infinite_ammo" value="true"/>
+					<property name="Magazine_items" value="ammoProjectileVultureVomit"/>
+					<property name="Sound_warning" value="vulturevomitwarning"/>
+					<property name="Sound_start" value="vulturevomitattack"/>
+					<property name="Sound_repeat" value=""/>
+					<property name="Sound_end" value=""/>
+					<property name="Sound_empty" value=""/>
+					<property name="Sound_reload" value=""/>
+				</property>
+				<effect_group name="meleeHandAnimalIceburgTeenZombieVultureRadiated" tiered="false">
+					<passive_effect name="ModSlots" operation="base_set" value="0"/>
+					<passive_effect name="MagazineSize" operation="base_set" value="1"/>
+					<passive_effect name="BurstRoundCount" operation="base_set" value="2"/>
+					<passive_effect name="SpreadDegreesVertical" operation="base_set" value="6"/>
+					<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="15"/>
+					<passive_effect name="SpreadMultiplierIdle" operation="base_set" value="1"/>
+					<passive_effect name="DamageFalloffRange" operation="base_set" value="50"/>
+					<passive_effect name="MaxRange" operation="base_set" value="50"/>
+
+					<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
+						buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
+						weights=".11,.07,.07,.05,.29,.36,.11"/>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="infectionCounter" operation="add" value="20"><!--InfectionRadiated-->
+						<requirement name="CVarCompare" target="other" cvar="infectionCounter" operation="GT" value="0"/></triggered_effect>
+					<triggered_effect trigger="onSelfAttackedOther" action="ModifyCVar" target="other" cvar="abrasionZombieHit" operation="set" value="3200"/><!--AbrasionRadiated-->
+				</effect_group>
+			</item>
+
+	</append>
+</Iceburg>
