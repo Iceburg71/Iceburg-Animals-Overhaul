@@ -1,0 +1,471 @@
+<Iceburg>
+
+<!-- Baby Animals -->
+<!-- Add in Baby Deer to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and not(@prob='0.73' or @prob='1')]]">
+		<entity name="animalIceburgBabyDeer" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and @prob='0.73']]">
+		<entity name="animalIceburgBabyDeer" prob="0.73" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and @prob='1']]">
+		<entity name="animalIceburgBabyDeer" prob="1" />
+	</append>
+
+<!-- Add in Baby Chicken to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and not(@prob='48')]]">
+		<entity name="animalIceburgBabyChicken" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and @prob='48']]">
+		<entity name="animalIceburgBabyChicken" prob="48" />
+	</append>
+
+<!-- Add in Baby Rabbit to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and not(@prob='48')]]">
+		<entity name="animalIceburgBabyRabbit" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and @prob='48']]">
+		<entity name="animalIceburgBabyRabbit" prob="48" />
+	</append>
+
+<!-- Add in Baby Boar to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and not(@prob='0.73' or @prob='.4' or @prob='1')]]">
+		<entity name="animalIceburgBabyBoar" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='0.73']]">
+		<entity name="animalIceburgBabyBoar" prob="0.73" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='0.4']]">
+		<entity name="animalIceburgBabyBoar" prob="0.4" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='1']]">
+		<entity name="animalIceburgBabyBoar" prob="1" />
+	</append>
+
+<!-- Add in Baby Bear to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and not(@prob='0.1' or @prob='10' or @prob='3')]]">
+		<entity name="animalIceburgBabyBear" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='0.1']]">
+		<entity name="animalIceburgBabyBear" prob="0.1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='10']]">
+		<entity name="animalIceburgBabyBear" prob="10" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='3']]">
+		<entity name="animalIceburgBabyBear" prob="3" />
+	</append>
+
+<!-- Add in Baby Wolf to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and not(@prob='1' or @prob='9')]]">
+		<entity name="animalIceburgBabyWolf" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='1']]">
+		<entity name="animalIceburgBabyWolf" prob="1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='9']]">
+		<entity name="animalIceburgBabyWolf" prob="9" />
+	</append>
+
+<!-- Add in Baby Coyote to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and not(@prob='30')]]">
+		<entity name="animalIceburgBabyCoyote" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and @prob='30']]">
+		<entity name="animalIceburgBabyCoyote" prob="30" />
+	</append>
+
+<!-- Add in Baby Mountain Lion to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and not(@prob='40')]]">
+		<entity name="animalIceburgBabyMountainLion" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and @prob='40']]">
+		<entity name="animalIceburgBabyMountainLion" prob="40" />
+	</append>
+
+<!-- Add in Baby Dire Wolf to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and not(@prob='10' or @prob='3' or @prob='0.5')]]">
+		<entity name="animalIceburgBabyDireWolf" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='10']]">
+		<entity name="animalIceburgBabyDireWolf" prob="10" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='3']]">
+		<entity name="animalIceburgBabyDireWolf" prob="3" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='0.5']]">
+		<entity name="animalIceburgBabyDireWolf" prob="0.5" />
+	</append>
+
+<!-- Add in Baby Zombie Dog to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and not(@prob='0.05' or @prob='0.15' or @prob='9' or @prob='30' or @prob='4')]]">
+		<entity name="animalIceburgBabyZombieDog"/>
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.05']]">
+		<entity name="animalIceburgBabyZombieDog" prob="0.05" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.15']]">
+		<entity name="animalIceburgBabyZombieDog" prob="0.15" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='9']]">
+		<entity name="animalIceburgBabyZombieDog" prob="9" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='30']]">
+		<entity name="animalIceburgBabyZombieDog" prob="30" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='4']]">
+		<entity name="animalIceburgBabyZombieDog" prob="4" />
+	</append>
+
+<!-- Add in Baby Zombie Bear to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and not(@prob='0.1' or @prob='0.05' or @prob='3' or @prob='20')]]">
+		<entity name="animalIceburgBabyZombieBear" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.1']]">
+		<entity name="animalIceburgBabyZombieBear" prob="0.1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.05']]">
+		<entity name="animalIceburgBabyZombieBear" prob="0.05" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='3']]">
+		<entity name="animalIceburgBabyZombieBear" prob="3" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='20']]">
+		<entity name="animalIceburgBabyZombieBear" prob="20" />
+	</append>
+
+<!-- Add in Baby Snake to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and not(@prob='10' or @prob='20')]]">
+		<entity name="animalIceburgBabySnake" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='10']]">
+		<entity name="animalIceburgBabySnake" prob="10" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='20']]">
+		<entity name="animalIceburgBabySnake" prob="20" />
+	</append>
+
+<!-- Add in Baby Zombie Vulture to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and not(@prob='0.6' or @prob='20' or @prob='30' or @prob='0.114' or @prob='0.119' or @prob='0.132' or @prob='0.118' or @prob='0.127' or @prob='0.11' or @prob='0.14' or @prob='0.17' or @prob='0.19' or @prob='0.23' or @prob='0.24' or @prob='0.3' or @prob='0.12' or @prob='0.15' or @prob='0.2')]]">
+		<entity name="animalIceburgBabyZombieVulture" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.6']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.6" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='20']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="20" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='30']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="30" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.114']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.114" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.119']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.119" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.119']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.118" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.132']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.132" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.127']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.127" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.11']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.11" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.14']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.14" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.17']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.17" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.19']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.19" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.23']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.23" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.24']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.24" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.3']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.3" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.12']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.12" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.15']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.15" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.2']]">
+		<entity name="animalIceburgBabyZombieVulture" prob="0.2" />
+	</append>
+
+<!-- Add in Baby Zombie Vulture Radiated to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and not(@prob='0.4' or @prob='0.1' or @prob='0.16' or @prob='0.18' or @prob='0.23' or @prob='0.27' or @prob='0.3')]]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.4']]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.4" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.1']]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.16']]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.16" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.18']]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.18" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.23']]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.23" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.27']]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.27" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.3']]">
+		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.3" />
+	</append>
+
+<!-- Teen Animals -->
+<!-- Add in Teen Doe to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and not(@prob='0.73' or @prob='1')]]">
+		<entity name="animalIceburgTeenDoe" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and @prob='0.73']]">
+		<entity name="animalIceburgTeenDoe" prob="0.73" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and @prob='1']]">
+		<entity name="animalIceburgTeenDoe" prob="1" />
+	</append>
+
+<!-- Add in Teen Stag to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalStag' and not(@prob='1')]]">
+		<entity name="animalIceburgTeenStag" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalStag' and @prob='1']]">
+		<entity name="animalIceburgTeenStag" prob="1" />
+	</append>
+
+<!-- Add in Teen Chicken to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and not(@prob='48')]]">
+		<entity name="animalIceburgTeenChicken" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and @prob='48']]">
+		<entity name="animalIceburgTeenChicken" prob="48" />
+	</append>
+
+<!-- Add in Teen Rabbit to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and not(@prob='48')]]">
+		<entity name="animalIceburgTeenRabbit" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and @prob='48']]">
+		<entity name="animalIceburgTeenRabbit" prob="48" />
+	</append>
+
+<!-- Add in Teen Boar to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and not(@prob='0.73' or @prob='.4' or @prob='1')]]">
+		<entity name="animalIceburgTeenBoar" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='0.73']]">
+		<entity name="animalIceburgTeenBoar" prob="0.73" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='0.4']]">
+		<entity name="animalIceburgTeenBoar" prob="0.4" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='1']]">
+		<entity name="animalIceburgTeenBoar" prob="1" />
+	</append>
+
+<!-- Add in Teen Bear to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and not(@prob='0.1' or @prob='10' or @prob='3')]]">
+		<entity name="animalIceburgTeenBear" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='0.1']]">
+		<entity name="animalIceburgTeenBear" prob="0.1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='10']]">
+		<entity name="animalIceburgTeenBear" prob="10" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='3']]">
+		<entity name="animalIceburgTeenBear" prob="3" />
+	</append>
+
+<!-- Add in Teen Wolf to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and not(@prob='1' or @prob='9')]]">
+		<entity name="animalIceburgTeenWolf" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='1']]">
+		<entity name="animalIceburgTeenWolf" prob="1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='9']]">
+		<entity name="animalIceburgTeenWolf" prob="9" />
+	</append>
+
+<!-- Add in Teen Coyote to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and not(@prob='30')]]">
+		<entity name="animalIceburgTeenCoyote" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and @prob='30']]">
+		<entity name="animalIceburgTeenCoyote" prob="30" />
+	</append>
+
+<!-- Add in Teen Mountain Lion to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and not(@prob='40')]]">
+		<entity name="animalIceburgTeenMountainLion" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and @prob='40']]">
+		<entity name="animalIceburgTeenMountainLion" prob="40" />
+	</append>
+
+<!-- Add in Teen Dire Wolf to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and not(@prob='10' or @prob='3' or @prob='0.5')]]">
+		<entity name="animalIceburgTeenDireWolf" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='10']]">
+		<entity name="animalIceburgTeenDireWolf" prob="10" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='3']]">
+		<entity name="animalIceburgTeenDireWolf" prob="3" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='0.5']]">
+		<entity name="animalIceburgTeenDireWolf" prob="0.5" />
+	</append>
+
+<!-- Add in Teen Zombie Dog to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and not(@prob='0.05' or @prob='0.15' or @prob='9' or @prob='30' or @prob='4')]]">
+		<entity name="animalIceburgTeenZombieDog"/>
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.05']]">
+		<entity name="animalIceburgTeenZombieDog" prob="0.05" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.15']]">
+		<entity name="animalIceburgTeenZombieDog" prob="0.15" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='9']]">
+		<entity name="animalIceburgTeenZombieDog" prob="9" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='30']]">
+		<entity name="animalIceburgTeenZombieDog" prob="30" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='4']]">
+		<entity name="animalIceburgTeenZombieDog" prob="4" />
+	</append>
+
+<!-- Add in Teen Zombie Bear to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and not(@prob='0.1' or @prob='0.05' or @prob='3' or @prob='20')]]">
+		<entity name="animalIceburgTeenZombieBear" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.1']]">
+		<entity name="animalIceburgTeenZombieBear" prob="0.1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.05']]">
+		<entity name="animalIceburgTeenZombieBear" prob="0.05" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='3']]">
+		<entity name="animalIceburgTeenZombieBear" prob="3" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='20']]">
+		<entity name="animalIceburgTeenZombieBear" prob="20" />
+	</append>
+
+<!-- Add in Teen Snake to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and not(@prob='10' or @prob='20')]]">
+		<entity name="animalIceburgTeenSnake" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='10']]">
+		<entity name="animalIceburgTeenSnake" prob="10" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='20']]">
+		<entity name="animalIceburgTeenSnake" prob="20" />
+	</append>
+
+<!-- Add in Teen Zombie Vulture to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and not(@prob='0.6' or @prob='20' or @prob='30' or @prob='0.114' or @prob='0.119' or @prob='0.132' or @prob='0.118' or @prob='0.127' or @prob='0.11' or @prob='0.14' or @prob='0.17' or @prob='0.19' or @prob='0.23' or @prob='0.24' or @prob='0.3' or @prob='0.12' or @prob='0.15' or @prob='0.2')]]">
+		<entity name="animalIceburgTeenZombieVulture" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.6']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.6" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='20']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="20" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='30']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="30" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.114']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.114" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.119']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.119" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.119']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.118" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.132']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.132" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.127']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.127" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.11']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.11" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.14']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.14" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.17']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.17" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.19']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.19" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.23']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.23" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.24']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.24" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.3']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.3" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.12']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.12" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.15']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.15" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.2']]">
+		<entity name="animalIceburgTeenZombieVulture" prob="0.2" />
+	</append>
+
+<!-- Add in Teen Zombie Vulture Radiated to Groups -->
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and not(@prob='0.4' or @prob='0.1' or @prob='0.16' or @prob='0.18' or @prob='0.23' or @prob='0.27' or @prob='0.3')]]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.4']]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.4" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.1']]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.1" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.16']]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.16" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.18']]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.18" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.23']]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.23" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.27']]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.27" />
+	</append>
+	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.3']]">
+		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.3" />
+	</append>
+
+</Iceburg>
