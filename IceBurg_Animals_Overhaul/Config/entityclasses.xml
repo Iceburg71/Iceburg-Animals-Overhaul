@@ -694,8 +694,14 @@
 	</effect_group>
 	</entity_class>
 
-<!-- Ancient Animals -->
+<!-- King Animals -->
 
+<!-- Feral Animals -->
+<!-- Feral Deer -->
+<!--	<entity_class name="animalIceburgFeralDeer" extends="animalDoe">
+		<property name="ReplaceMaterial0" value="particleeffects/models/materials/p_glass"/>
+	</entity_class>
+-->
 
 </append>
 
