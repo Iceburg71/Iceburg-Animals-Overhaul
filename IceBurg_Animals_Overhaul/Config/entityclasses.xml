@@ -172,7 +172,7 @@
 <!-- Baby Mountain Lion -->
 	<entity_class name="animalIceburgBabyMountainLion" extends="animalMountainLion">
 		<property name="Mass" value="63"/>
-		<property name="SizeScale" value="0.5"/>
+		<property name="SizeScale" value="0.6"/>
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="225"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyMountainLion"/>
@@ -195,7 +195,7 @@
 <!-- Baby Dire Wolf -->
 	<entity_class name="animalIceburgBabyDireWolf" extends="animalDireWolf">
 		<property name="Mass" value="90"/>
-		<property name="SizeScale" value="0.5"/>
+		<property name="SizeScale" value="0.6"/>
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="225"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyDireWolf"/>
@@ -531,7 +531,7 @@
 <!-- Teen Mountain Lion -->
 	<entity_class name="animalIceburgTeenMountainLion" extends="animalMountainLion">
 		<property name="Mass" value="63"/>
-		<property name="SizeScale" value="0.75"/>
+		<property name="SizeScale" value="1"/>
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="225"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenMountainLion"/>
@@ -553,7 +553,7 @@
 <!-- Teen Dire Wolf -->
 	<entity_class name="animalIceburgTeenDireWolf" extends="animalDireWolf">
 		<property name="Mass" value="90"/>
-		<property name="SizeScale" value="0.75"/>
+		<property name="SizeScale" value="1"/>
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="225"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenDireWolf"/>
