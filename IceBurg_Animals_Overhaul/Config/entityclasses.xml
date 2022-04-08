@@ -1,15 +1,34 @@
 <Iceburg>
 
 <!-- make any corrections to the default animals in the game -->
-	<!-- Fix animals climbing ladders -->
-<!--	<property name="CanClimbLadders" value="false"/>   -->
 
-<!--	<property name="TimeStayAfterDeath" value="300"/>  -->
+<!-- Fix animals climbing ladders -->
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateTimid']/property[@name='CanClimbLadders']/@value">false</set>
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateHostile']/property[@name='CanClimbLadders']/@value">false</set>
 
+<!-- Fix animals time stay after death -->
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateTimid']/property[@name='TimeStayAfterDeath']/@value">300</set>
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateHostile']/property[@name='TimeStayAfterDeath']/@value">300</set>
+	
+<!-- Base zombie vulture size to .8 -->
+	<set xpath="/entity_classes/entity_class[@name='animalZombieVulture']/property[@name='SizeScale']/@value">.8</set>
 
+<!-- Base Zombie Vulture Radiated size to 1 -->
+	<set xpath="/entity_classes/entity_class[@name='animalZombieVultureRadiated']/property[@name='SizeScale']/@value">1</set>
 
+<!--  Increase speed of Snake -->
+<!--
+<entity_class name="animalSnake" extends="animalTemplateHostile">
+	<property name="MoveSpeed" value="0.08"/>
+	<property name="MoveSpeedAggro" value=".2, .2"/>
+	<property name="MoveSpeedPanic" value="0.2"/>
+-->
 
 <append xpath="/entity_classes">
+<!-- Infected adult animals -->
+<!-- Infected Rabbit -->
+
+
 <!-- Baby Animals -->
 <!-- Baby Deer -->
 	<entity_class name="animalIceburgBabyDeer" extends="animalDoe">
@@ -20,7 +39,6 @@
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="25"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="10"/>
@@ -28,32 +46,7 @@
 		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="8"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	</entity_class>
-
-<!-- Baby chicken (not yellow chick, though) -->
-	<entity_class name="animalIceburgBabyChicken" extends="animalChicken">
-		<property name="Mass" value="8"/>
-		<property name="SizeScale" value="0.5"/>
-		<property name="ExperienceGain" value="130"/>
-		<property name="DeadBodyHitPoints" value="87"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="55"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/> <!-- animalChicken -->
-		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="11"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
 <!-- Baby Rabbit -->
 	<entity_class name="animalIceburgBabyRabbit" extends="animalRabbit">
 		<property name="Mass" value="6"/>
@@ -63,46 +56,32 @@
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="35"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/> <!-- animalRabbit -->
 		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="1"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="2"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	</entity_class>
-
-<!-- Baby Boar -->
-	<entity_class name="animalIceburgBabyBoar" extends="animalBoar">
-		<property name="Mass" value="100"/>
+<!-- Baby chicken (not yellow chick, though) -->
+	<entity_class name="animalIceburgBabyChicken" extends="animalChicken">
+		<property name="Mass" value="8"/>
 		<property name="SizeScale" value="0.5"/>
-		<property name="ExperienceGain" value="206"/>
-		<property name="DeadBodyHitPoints" value="175"/>
-		<property name="HandItem" value="meleeHandanimalIceburgBabyBoar"/>
+		<property name="ExperienceGain" value="130"/>
+		<property name="DeadBodyHitPoints" value="87"/>
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="130"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
+			<passive_effect name="HealthMax" operation="base_set" value="10"/>
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/> <!-- animalChicken -->
+		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="11"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
 	</entity_class>
-
 <!-- Baby Bear -->
 	<entity_class name="animalIceburgBabyBear" extends="animalBear">
 		<property name="SizeScale" value="0.25"/>
-		<property name="Tags" value="animal,hostile"/>
-		<property name="IsEnemyEntity" value="false"/>
 		<property name="ExperienceGain" value="188"/> 
 		<property name="DeadBodyHitPoints" value="150"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyBear"/>
@@ -110,7 +89,6 @@
 		<property name="Mass" value="150"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="400"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 		</effect_group>	
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="13"/>
@@ -118,126 +96,7 @@
 		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	</entity_class>
-
-<!-- Baby Wolf -->
-	<entity_class name="animalIceburgBabyWolf" extends="animalWolf">
-		<property name="Mass" value="47"/>
-		<property name="SizeScale" value="0.5"/>
-		<property name="ExperienceGain" value="175"/>
-		<property name="DeadBodyHitPoints" value="130"/>
-		<property name="HandItem" value="meleeHandanimalIceburgBabyWolf"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="100"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="12"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
-<!-- Baby Coyote -->
-	<entity_class name="animalIceburgBabyCoyote" extends="animalCoyote">
-		<property name="Mass" value="25"/>
-		<property name="SizeScale" value="0.5"/>
-		<property name="ExperienceGain" value="103"/>
-		<property name="DeadBodyHitPoints" value="100"/>
-		<property name="HandItem" value="meleeHandanimalIceburgBabyCoyote"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="50"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="4"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
-<!-- Baby Mountain Lion -->
-	<entity_class name="animalIceburgBabyMountainLion" extends="animalMountainLion">
-		<property name="Mass" value="63"/>
-		<property name="SizeScale" value="0.6"/>
-		<property name="ExperienceGain" value="375"/>
-		<property name="DeadBodyHitPoints" value="225"/>
-		<property name="HandItem" value="meleeHandanimalIceburgBabyMountainLion"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="375"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="12"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="5"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
-<!-- Baby Dire Wolf -->
-	<entity_class name="animalIceburgBabyDireWolf" extends="animalDireWolf">
-		<property name="Mass" value="90"/>
-		<property name="SizeScale" value="0.6"/>
-		<property name="ExperienceGain" value="375"/>
-		<property name="DeadBodyHitPoints" value="225"/>
-		<property name="HandItem" value="meleeHandanimalIceburgBabyDireWolf"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="375"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="17"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="5"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
-<!-- Baby Zombie Dog -->
-	<entity_class name="animalIceburgBabyZombieDog" extends="animalZombieDog">
-		<property name="Mass" value="47"/>
-		<property name="SizeScale" value="0.5"/>
-		<property name="ExperienceGain" value="175"/>
-		<property name="DeadBodyHitPoints" value="130"/>
-		<property name="HandItem" value="meleeHandanimalIceburgBabyZombieDog"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="100"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="1"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
 <!-- Baby Zombie Bear -->
 	<entity_class name="animalIceburgBabyZombieBear" extends="animalZombieBear">
 		<property name="Mass" value="150"/>
@@ -248,7 +107,6 @@
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="500"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="1"/>
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="13"/>
@@ -256,73 +114,102 @@
 		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	</entity_class>
-
-<!-- Baby Snake -->
-	<entity_class name="animalIceburgBabySnake" extends="animalSnake">
-		<property name="Mass" value="15"/>
-		<property name="Weight" value="35"/>
+<!-- Baby Wolf -->
+	<entity_class name="animalIceburgBabyWolf" extends="animalWolf">
+		<property name="Mass" value="47"/>
 		<property name="SizeScale" value="0.5"/>
-		<property name="ExperienceGain" value="65"/>
-		<property name="DeadBodyHitPoints" value="75"/>
-		<property name="HandItem" value="meleeHandanimalIceburgBabySnake"/>
+		<property name="ExperienceGain" value="200"/>
+		<property name="DeadBodyHitPoints" value="175"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyWolf"/>
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="5"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+			<passive_effect name="HealthMax" operation="base_set" value="100"/>
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="12"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="5"/>
 		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
 	</entity_class>
-
+<!-- Baby Coyote -->
+	<entity_class name="animalIceburgBabyCoyote" extends="animalCoyote">
+		<property name="Mass" value="25"/>
+		<property name="SizeScale" value="0.5"/>
+		<property name="ExperienceGain" value="103"/>
+		<property name="DeadBodyHitPoints" value="100"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyCoyote"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="50"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="6"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="4"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
+	</entity_class>
+<!-- Baby Dire Wolf -->
+	<entity_class name="animalIceburgBabyDireWolf" extends="animalDireWolf">
+		<property name="Mass" value="90"/>
+		<property name="SizeScale" value="0.6"/>
+		<property name="ExperienceGain" value="375"/>
+		<property name="DeadBodyHitPoints" value="225"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyDireWolf"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="375"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="17"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="6"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+	</entity_class>
+<!-- Baby Mountain Lion -->
+	<entity_class name="animalIceburgBabyMountainLion" extends="animalMountainLion">
+		<property name="Mass" value="63"/>
+		<property name="SizeScale" value="0.6"/>
+		<property name="ExperienceGain" value="375"/>
+		<property name="DeadBodyHitPoints" value="225"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyMountainLion"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="375"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="12"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="5"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+	</entity_class>
 <!-- Baby Zombie Vulture -->
 	<entity_class name="animalIceburgBabyZombieVulture" extends="animalZombieVulture">
-		<property name="Tags" value="entity,animal,zombie,hostile,vulture"/>
-		<property name="Class" value="EntityVulture"/>
-		<property name="EntityType" value="Zombie"/>
-		<property name="AvatarController" value="AvatarAnimalController"/>
-		<property name="ModelType" value="Standard"/>
 		<property name="HasRagdoll" value="true"/>
 		<property name="PhysicsBody" value="vulture"/>
 		<property name="Mass" value="18"/>
 		<property name="Mesh" value="Animals/Vulture/animalVultureStandardRagdoll"/>
-		<property name="SizeScale" value=".5"/>
+		<property name="SizeScale" value=".4"/>
 		<property name="HandItem" value="meleeHandAnimalIceburgBabyZombieVulture"/>
-		<property name="ExperienceGain" value="206"/> <!-- XP grunt -->
+		<property name="ExperienceGain" value="200"/> <!-- XP grunt -->
 		<property name="DeadBodyHitPoints" value="88"/>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="4"/> <!-- animalZombieVulture -->
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="2"/> <!-- animalZombieVulture -->
 		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="15"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
-		<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="15"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 		</effect_group>
 	</entity_class>
-
 <!-- Baby Zombie Vulture Radiated -->
 	<entity_class name="animalIceburgBabyZombieVultureRadiated" extends="animalZombieVulture">
-		<property name="Tags" value="entity,animal,zombie,hostile,radiated,vulture"/>
-		<property name="Radiated" value=""/>
 		<property name="Mass" value="25"/>
 		<property name="SizeScale" value=".5"/>
-		<property name="MoveSpeed" value=".7"/>
-		<property name="MoveSpeedAggro" value="1.5, 1.5"/>
-		<property name="MaxTurnSpeed" value="150"/>
 		<property name="HandItem" value="meleeHandAnimalIceburgBabyZombieVultureRadiated"/>
 		<property name="ExperienceGain" value="600"/> <!-- XP grunt radiated -->
 		<property name="DeadBodyHitPoints" value="100"/>
@@ -333,14 +220,81 @@
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="60"/>
-			<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-			<passive_effect name="EntityDamage" operation="perc_add" value=".4"/> <!-- Feral damage -->
-			<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
-			<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 		</effect_group>
+	</entity_class>
+<!-- Baby Zombie Dog -->
+	<entity_class name="animalIceburgBabyZombieDog" extends="animalZombieDog">
+		<property name="Mass" value="47"/>
+		<property name="SizeScale" value="0.5"/>
+		<property name="ExperienceGain" value="200"/>
+		<property name="DeadBodyHitPoints" value="175"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyZombieDog"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="100"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+	</entity_class>
+<!-- Baby Snake -->
+	<entity_class name="animalIceburgBabySnake" extends="animalSnake">
+		<property name="Mass" value="15"/>
+		<property name="Weight" value="35"/>
+		<property name="SizeScale" value="0.5"/>
+		<property name="ExperienceGain" value="65"/>
+		<property name="DeadBodyHitPoints" value="75"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabySnake"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="10"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
+	</entity_class>
+<!-- Baby Boar -->
+	<entity_class name="animalIceburgBabyBoar" extends="animalBoar">
+		<property name="Mass" value="100"/>
+		<property name="SizeScale" value="0.5"/>
+		<property name="ExperienceGain" value="200"/>
+		<property name="DeadBodyHitPoints" value="175"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyBoar"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="125"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
 	</entity_class>
 
 <!-- Teen Animals -->
+<!-- Teen Stag -->
+	<entity_class name="animalIceburgTeenStag" extends="animalStag">
+		<property name="Mass" value="135"/>
+		<property name="SizeScale" value="0.75"/>
+		<property name="ExperienceGain" value="184"/>
+		<property name="DeadBodyHitPoints" value="263"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="75"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="22"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="18"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
+	</entity_class>
 <!-- Teen Deer -->
 	<entity_class name="animalIceburgTeenDoe" extends="animalDoe">
 		<property name="Mass" value="70"/>
@@ -350,38 +304,30 @@
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="35"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="10"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="8"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-<!-- Teen Stag -->
-	<entity_class name="animalIceburgTeenStag" extends="animalStag">
-		<property name="Mass" value="135"/>
-		<property name="SizeScale" value="0.75"/>
-		<property name="ExperienceGain" value="184"/>
-		<property name="DeadBodyHitPoints" value="1262"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="75"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="22"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
 		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="18"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="5"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="11"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
+	</entity_class>
+<!-- Teen Rabbit -->
+	<entity_class name="animalIceburgTeenRabbit" extends="animalRabbit">
+		<property name="Mass" value="10"/>
+		<property name="SizeScale" value="0.75"/>
+		<property name="ExperienceGain" value="130"/>
+		<property name="DeadBodyHitPoints" value="135"/>
+		<property name="HasRagdoll" value="false"/>
+		<property name="Weight" value="8"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="8"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="8"/> <!-- animalRabbit -->
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
 	</entity_class>
 <!-- Teen chicken -->
 	<entity_class name="animalIceburgTeenChicken" extends="animalChicken">
@@ -393,140 +339,104 @@
 		<property name="Weight" value="8"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="8"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="8"/> <!-- animalChicken -->
 		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="18"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
-<!-- Teen Rabbit -->
-	<entity_class name="animalIceburgTeenRabbit" extends="animalRabbit">
-		<property name="Mass" value="10"/>
-		<property name="SizeScale" value="0.75"/>
-		<property name="ExperienceGain" value="130"/>
-		<property name="DeadBodyHitPoints" value="85"/>
-		<property name="HasRagdoll" value="false"/>
-		<property name="Weight" value="8"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="8"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="8"/> <!-- animalRabbit -->
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="3"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-<!-- Teen Boar -->
-	<entity_class name="animalIceburgTeenBoar" extends="animalBoar">
-		<property name="Mass" value="120"/>
-		<property name="SizeScale" value="0.75"/>
-		<property name="ExperienceGain" value="135"/>
-		<property name="DeadBodyHitPoints" value="130"/>
-		<property name="HandItem" value="meleeHandanimalIceburgTeenBoar"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="130"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/> 
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	</entity_class>
 <!-- Teen Bear -->
 	<entity_class name="animalIceburgTeenBear" extends="animalBear">
 		<property name="Tags" value="animal,hostile"/>
 		<property name="IsEnemyEntity" value="false"/>
-		<property name="ExperienceGain" value="188"/> 
-		<property name="DeadBodyHitPoints" value="150"/>
+		<property name="ExperienceGain" value=" 495"/> 
+		<property name="DeadBodyHitPoints" value="396"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenBear"/>
 		<property name="HasRagdoll" value="false"/>
 		<property name="Mass" value="150"/>
 		<property name="SizeScale" value="0.66"/>
-		<property name="AITask-1" value="BreakBlock"/>
-		<property name="AITask-2" value="DestroyArea"/>
-		<property name="AITask-3" value="Territorial"/>
-		<property name="AITask-4" value="ApproachAndAttackTarget" data="class=EntityAnimalStag,40,EntityPlayer,25,EntityZombie,30"/>
-		<property name="AITask-5" value="ApproachSpot"/>
-		<property name="AITask-6" value="Look"/>
-		<property name="AITask-7" value="Wander"/>
-		<property name="AITask-8" value=""/>
-		<property name="AITarget-1" value="SetAsTargetIfHurt"/>
-		<property name="AITarget-2" value="BlockingTargetTask"/>
-		<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityPlayer,13,8,EntityAnimalStag,0,0,EntityZombie,0,0"/>
-		<property name="AITarget-4" value=""/>
 		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="200"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+			<passive_effect name="HealthMax" operation="base_set" value="1056"/>
 		</effect_group>	
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="13"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="33"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="10"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="16"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+	</entity_class>
+<!-- Teen Zombie Bear -->
+	<entity_class name="animalIceburgTeenZombieBear" extends="animalZombieBear">
+		<property name="Mass" value="150"/>
+		<property name="SizeScale" value="0.66"/>
+		<property name="ExperienceGain" value="495"/>
+		<property name="DeadBodyHitPoints" value="396"/>
+		<property name="HandItem" value="meleeHandanimalIceburgTeenZombieBear"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="1320"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="33"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="10"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="16"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="32"/>
 	</entity_class>
 <!-- Teen Wolf -->
 	<entity_class name="animalIceburgTeenWolf" extends="animalWolf">
 		<property name="Mass" value="47"/>
 		<property name="SizeScale" value="0.75"/>
-		<property name="ExperienceGain" value="175"/>
-		<property name="DeadBodyHitPoints" value="130"/>
+		<property name="ExperienceGain" value="300"/>
+		<property name="DeadBodyHitPoints" value="263"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenWolf"/>
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="70"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="12"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="18"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="11"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
 	</entity_class>
 <!-- Teen Coyote -->
 	<entity_class name="animalIceburgTeenCoyote" extends="animalCoyote">
 		<property name="Mass" value="25"/>
 		<property name="SizeScale" value="0.75"/>
-		<property name="ExperienceGain" value="103"/>
-		<property name="DeadBodyHitPoints" value="100"/>
+		<property name="ExperienceGain" value="152"/>
+		<property name="DeadBodyHitPoints" value="150"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenCoyote"/>
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="40"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
+			<passive_effect name="HealthMax" operation="base_set" value="75"/>
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="4"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="9"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+	</entity_class>
+<!-- Teen Dire Wolf -->
+	<entity_class name="animalIceburgTeenDireWolf" extends="animalDireWolf">
+		<property name="Mass" value="90"/>
+		<property name="SizeScale" value="1.05"/>
+		<property name="ExperienceGain" value="563"/>
+		<property name="DeadBodyHitPoints" value="338"/>
+		<property name="HandItem" value="meleeHandanimalIceburgTeenDireWolf"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="563"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="26"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="9"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="11"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
 	</entity_class>
 <!-- Teen Mountain Lion -->
 	<entity_class name="animalIceburgTeenMountainLion" extends="animalMountainLion">
@@ -538,7 +448,6 @@
 		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="125"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 		</effect_group>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="12"/>
@@ -546,112 +455,14 @@
 		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 	</entity_class>
-<!-- Teen Dire Wolf -->
-	<entity_class name="animalIceburgTeenDireWolf" extends="animalDireWolf">
-		<property name="Mass" value="90"/>
-		<property name="SizeScale" value="1"/>
-		<property name="ExperienceGain" value="375"/>
-		<property name="DeadBodyHitPoints" value="225"/>
-		<property name="HandItem" value="meleeHandanimalIceburgTeenDireWolf"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="125"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="17"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="5"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-<!-- Teen Zombie Dog -->
-	<entity_class name="animalIceburgTeenZombieDog" extends="animalZombieDog">
-		<property name="Mass" value="47"/>
-		<property name="SizeScale" value="0.75"/>
-		<property name="ExperienceGain" value="175"/>
-		<property name="DeadBodyHitPoints" value="130"/>
-		<property name="HandItem" value="meleeHandanimalIceburgTeenZombieDog"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="60"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="1"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-<!-- Teen Zombie Bear -->
-	<entity_class name="animalIceburgTeenZombieBear" extends="animalZombieBear">
-		<property name="Mass" value="150"/>
-		<property name="SizeScale" value="0.66"/>
-		<property name="ExperienceGain" value="375"/>
-		<property name="DeadBodyHitPoints" value="150"/>
-		<property name="HandItem" value="meleeHandanimalIceburgTeenZombieBear"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="250"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="1"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="13"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="4"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-<!-- Teen Snake -->
-	<entity_class name="animalIceburgTeenSnake" extends="animalSnake">
-		<property name="Mass" value="15"/>
-		<property name="Weight" value="35"/>
-		<property name="SizeScale" value="0.75"/>
-		<property name="ExperienceGain" value="65"/>
-		<property name="DeadBodyHitPoints" value="75"/>
-		<property name="HandItem" value="meleeHandanimalIceburgTeenSnake"/>
-		<property name="HasRagdoll" value="false"/>
-		<effect_group name="Base Effects">
-			<passive_effect name="HealthMax" operation="base_set" value="10"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
-		</effect_group>
-		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/>
-		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="1"/>
-		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
-		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
-	</entity_class>
-
 <!-- Teen Zombie Vulture -->
 	<entity_class name="animalIceburgTeenZombieVulture" extends="animalZombieVulture">
-		<property name="Tags" value="entity,animal,zombie,hostile,vulture"/>
-		<property name="Class" value="EntityVulture"/>
-		<property name="EntityType" value="Zombie"/>
-		<property name="AvatarController" value="AvatarAnimalController"/>
-		<property name="ModelType" value="Standard"/>
 		<property name="HasRagdoll" value="true"/>
-		<property name="PhysicsBody" value="vulture"/>
 		<property name="Mass" value="35"/>
 		<property name="Mesh" value="Animals/Vulture/animalVultureStandardRagdoll"/>
-		<property name="SizeScale" value=".52"/>
+		<property name="SizeScale" value=".6"/>
+		<property name="ExperienceGain" value="300"/> <!-- XP grunt -->
 		<property name="DeadBodyHitPoints" value="132"/>
 		<property name="HandItem" value="meleeHandAnimalIceburgTeenZombieVulture"/>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
@@ -659,40 +470,83 @@
 		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="23"/>
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="5"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
-		<drop event="Harvest" name="foodRottingFlesh" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
-		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="23"/>
-			<passive_effect name="HealthMax" operation="perc_add" value="0"/>
 		</effect_group>
 	</entity_class>
-
 <!-- Teen Zombie Vulture Radiated -->
 	<entity_class name="animalIceburgTeenZombieVultureRadiated" extends="animalZombieVulture">
-	<property name="Tags" value="entity,animal,zombie,hostile,radiated,vulture"/>
-	<property name="Radiated" value=""/>
-	<property name="Mass" value="27"/>
-	<property name="SizeScale" value=".9"/>
-	<property name="MoveSpeed" value=".7"/>
-	<property name="MoveSpeedAggro" value="1.5, 1.5"/>
-	<property name="MaxTurnSpeed" value="150"/>
-	<property name="HandItem" value="meleeHandAnimalIceburgTeenZombieVultureRadiated"/>
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
-	<property name="DeadBodyHitPoints" value="150"/>
-	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
-	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/> <!-- animalZombieVultureRadiated -->
-	<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="26"/>
-	<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
-	<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
-	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="90"/>
-		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<passive_effect name="EntityDamage" operation="perc_add" value=".4"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
-		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
-	</effect_group>
+		<property name="Mass" value="27"/>
+		<property name="SizeScale" value=".75"/>
+		<property name="HandItem" value="meleeHandAnimalIceburgTeenZombieVultureRadiated"/>
+		<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
+		<property name="DeadBodyHitPoints" value="150"/>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/> <!-- animalZombieVultureRadiated -->
+		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="26"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="6"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="90"/>
+		</effect_group>
 	</entity_class>
+<!-- Teen Zombie Dog -->
+	<entity_class name="animalIceburgTeenZombieDog" extends="animalZombieDog">
+		<property name="Mass" value="47"/>
+		<property name="SizeScale" value="0.75"/>
+		<property name="ExperienceGain" value="300"/>
+		<property name="DeadBodyHitPoints" value="263"/>
+		<property name="HandItem" value="meleeHandanimalIceburgTeenZombieDog"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="150"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="11"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+	</entity_class>
+<!-- Teen Snake -->
+	<entity_class name="animalIceburgTeenSnake" extends="animalSnake">
+		<property name="Mass" value="15"/>
+		<property name="Weight" value="35"/>
+		<property name="SizeScale" value="0.75"/>
+		<property name="ExperienceGain" value="98"/>
+		<property name="DeadBodyHitPoints" value="113"/>
+		<property name="HandItem" value="meleeHandanimalIceburgTeenSnake"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="10"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
+	</entity_class>
+
+<!-- Teen Boar -->
+	<entity_class name="animalIceburgTeenBoar" extends="animalBoar">
+		<property name="Mass" value="120"/>
+		<property name="SizeScale" value="0.75"/>
+		<property name="ExperienceGain" value="135"/>
+		<property name="DeadBodyHitPoints" value="130"/>
+		<property name="HandItem" value="meleeHandanimalIceburgTeenBoar"/>
+		<property name="HasRagdoll" value="false"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="130"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+	</entity_class>
+
+
 
 <!-- King Animals -->
 
