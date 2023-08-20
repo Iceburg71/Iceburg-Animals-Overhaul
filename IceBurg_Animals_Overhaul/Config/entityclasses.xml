@@ -6,37 +6,82 @@
 	<set xpath="/entity_classes/entity_class[@name='animalTemplateTimid']/property[@name='CanClimbLadders']/@value">false</set>
 	<set xpath="/entity_classes/entity_class[@name='animalTemplateHostile']/property[@name='CanClimbLadders']/@value">false</set>
 
+<!-- Set Snakes to be able to climb ladders -->
+	<insertAfter xpath="/entity_classes/entity_class[@name='animalSnake']/property[@name='AvatarController' and @value='AvatarAnimalController']">
+			<property name="CanClimbLadders" value="true"/>
+	</insertAfter>
+
+<!--	<set xpath="/entity_classes/entity_class[@name='animalSnake']/property[@name='CanClimbLadders']/@value">true</set> -->
+
 <!-- Fix animals time stay after death -->
-	<set xpath="/entity_classes/entity_class[@name='animalTemplateTimid']/property[@name='TimeStayAfterDeath']/@value">300</set>
-	<set xpath="/entity_classes/entity_class[@name='animalTemplateHostile']/property[@name='TimeStayAfterDeath']/@value">300</set>
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateTimid']/property[@name='TimeStayAfterDeath']/@value">500</set>
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateHostile']/property[@name='TimeStayAfterDeath']/@value">500</set>
 	
 <!-- Base zombie vulture size to .8 -->
 	<set xpath="/entity_classes/entity_class[@name='animalZombieVulture']/property[@name='SizeScale']/@value">.8</set>
 
-<!-- Base Zombie Vulture Radiated size to 1 -->
-	<set xpath="/entity_classes/entity_class[@name='animalZombieVultureRadiated']/property[@name='SizeScale']/@value">1</set>
+<!-- Radiated texture on radiated vulture -->
+	<append xpath="/entity_classes/entity_class[@name='animalZombieVultureRadiated']">
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+	</append>	
 
-<!--  Increase speed of Snake -->
-<!--
-<entity_class name="animalSnake" extends="animalTemplateHostile">
+<!--  Increase speed of Snake
+	<entity_class name="animalSnake" extends="animalTemplateHostile">
 	<property name="MoveSpeed" value="0.08"/>
 	<property name="MoveSpeedAggro" value=".2, .2"/>
 	<property name="MoveSpeedPanic" value="0.2"/>
 -->
 
-<append xpath="/entity_classes">
+<!-- Testing Area -->
+
+
+<!-- End Of Testing Area -->
+
 <!-- Infected adult animals -->
 <!-- Infected Rabbit -->
 
+<!-- ***************** -->
+<!-- New Adult Animals -->
+<!-- ***************** -->
+<append xpath="/entity_classes">
+<!-- Adult Radiated Zombie Dog -->
+	<entity_class name="animalIceburgRadiatedZombieDog" extends="animalZombieDog">
+		<property name="Tags" value="entity,animal,zombie,hostile,dog,radiated"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+		<property name="ExperienceGain" value="1200"/>
+		<property name="HandItem" value="meleeHandanimalIceburgRadiatedZombieDog"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="800"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+		</effect_group>
+	</entity_class>
+<!-- Adult Radiated Boar -->
+	<entity_class name="animalIceburgRadiatedBoar" extends="animalBoar">
+		<property name="Tags" value="entity,animal,hostile,boar,perkAT02,perkAT03,radiated"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+		<property name="ExperienceGain" value="1200"/>
+		<property name="DeadBodyHitPoints" value="350"/>
+		<property name="HandItem" value="meleeHandanimalIceburgRadiatedBoar"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="1000"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
+		</effect_group>
+	</entity_class>
 
+<!-- ************ -->
 <!-- Baby Animals -->
+<!-- ************ -->
 <!-- Baby Deer -->
 	<entity_class name="animalIceburgBabyDeer" extends="animalDoe">
 		<property name="SizeScale" value="0.5"/>
 		<property name="Mass" value="55"/>
 		<property name="ExperienceGain" value="122"/>
 		<property name="DeadBodyHitPoints" value="130"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="25"/>
 		</effect_group>
@@ -53,7 +98,6 @@
 		<property name="SizeScale" value="0.5"/>
 		<property name="ExperienceGain" value="130"/>
 		<property name="DeadBodyHitPoints" value="85"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="35"/>
 		</effect_group>
@@ -69,7 +113,6 @@
 		<property name="SizeScale" value="0.5"/>
 		<property name="ExperienceGain" value="130"/>
 		<property name="DeadBodyHitPoints" value="87"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="10"/>
 		</effect_group>
@@ -85,7 +128,6 @@
 		<property name="ExperienceGain" value="188"/> 
 		<property name="DeadBodyHitPoints" value="150"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyBear"/>
-		<property name="HasRagdoll" value="false"/>
 		<property name="Mass" value="150"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="400"/>
@@ -104,7 +146,6 @@
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="150"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyZombieBear"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="500"/>
 		</effect_group>
@@ -122,7 +163,6 @@
 		<property name="ExperienceGain" value="200"/>
 		<property name="DeadBodyHitPoints" value="175"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyWolf"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="100"/>
 		</effect_group>
@@ -140,7 +180,6 @@
 		<property name="ExperienceGain" value="103"/>
 		<property name="DeadBodyHitPoints" value="100"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyCoyote"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="50"/>
 		</effect_group>
@@ -158,7 +197,6 @@
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="225"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyDireWolf"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="375"/>
 		</effect_group>
@@ -176,7 +214,6 @@
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="225"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyMountainLion"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="375"/>
 		</effect_group>
@@ -189,7 +226,6 @@
 	</entity_class>
 <!-- Baby Zombie Vulture -->
 	<entity_class name="animalIceburgBabyZombieVulture" extends="animalZombieVulture">
-		<property name="HasRagdoll" value="true"/>
 		<property name="PhysicsBody" value="vulture"/>
 		<property name="Mass" value="18"/>
 		<property name="Mesh" value="Animals/Vulture/animalVultureStandardRagdoll"/>
@@ -207,12 +243,14 @@
 		</effect_group>
 	</entity_class>
 <!-- Baby Zombie Vulture Radiated -->
-	<entity_class name="animalIceburgBabyZombieVultureRadiated" extends="animalZombieVulture">
+	<entity_class name="animalIceburgBabyZombieVultureRadiated" extends="animalZombieVultureRadiated">
 		<property name="Mass" value="25"/>
-		<property name="SizeScale" value=".5"/>
+		<property name="SizeScale" value=".6"/>
 		<property name="HandItem" value="meleeHandAnimalIceburgBabyZombieVultureRadiated"/>
 		<property name="ExperienceGain" value="600"/> <!-- XP grunt radiated -->
 		<property name="DeadBodyHitPoints" value="100"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="3"/> <!-- animalZombieVultureRadiated -->
 		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="17"/>
@@ -226,10 +264,9 @@
 	<entity_class name="animalIceburgBabyZombieDog" extends="animalZombieDog">
 		<property name="Mass" value="47"/>
 		<property name="SizeScale" value="0.5"/>
-		<property name="ExperienceGain" value="200"/>
+		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="175"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyZombieDog"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="100"/>
 		</effect_group>
@@ -248,7 +285,6 @@
 		<property name="ExperienceGain" value="65"/>
 		<property name="DeadBodyHitPoints" value="75"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabySnake"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="10"/>
 		</effect_group>
@@ -265,7 +301,6 @@
 		<property name="ExperienceGain" value="200"/>
 		<property name="DeadBodyHitPoints" value="175"/>
 		<property name="HandItem" value="meleeHandanimalIceburgBabyBoar"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="125"/>
 		</effect_group>
@@ -276,15 +311,78 @@
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
 	</entity_class>
+<!-- Baby Radiated Zombie Dog -->
+	<entity_class name="animalIceburgRadiatedBabyZombieDog" extends="animalZombieDog">
+		<property name="Mass" value="47"/>
+		<property name="SizeScale" value="0.5"/>
+		<property name="ExperienceGain" value="600"/>
+		<property name="DeadBodyHitPoints" value="175"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyZombieDog"/>
+		<property name="Tags" value="entity,animal,zombie,hostile,radiated,vulture"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+		<property name="ExperienceGain" value="500"/>
+		<property name="HandItem" value="meleeHandanimalIceburgTeenZombieDog"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="400"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="2"/>
+	</entity_class>
+<!-- Baby Radiated Boar -->
+	<entity_class name="animalIceburgRadiatedBabyBoar" extends="animalIceburgRadiatedBoar">
+		<property name="Tags" value="entity,animal,hostile,boar,perkAT02,perkAT03,radiated"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+		<property name="SizeScale" value="0.5"/>
+		<property name="ExperienceGain" value="600"/>
+		<property name="DeadBodyHitPoints" value="350"/>
+		<property name="HandItem" value="meleeHandanimalIceburgRadiatedZombieDog"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="500"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+	</entity_class>
+<!-- Baby Hostile Chicken -->
+	<entity_class name="animalIceburgBabyChickenHostile" extends="animalChickenHostile">
+		<property name="SizeScale" value=".7"/>
+		<property name="Mass" value="15"/>
+		<property name="Weight" value="10"/>
+		<property name="HandItem" value="meleeHandanimalIceburgBabyCoyote"/>
+		<property name="MoveSpeedPanic" value="1.5"/>
+		<property name="ExperienceGain" value="130"/>
+		<property name="DeadBodyHitPoints" value="175"/>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/> <!-- animalChicken -->
+		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="12"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="8"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
+		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="100"/>
+		</effect_group>
+	</entity_class>
 
+<!-- ************ -->
 <!-- Teen Animals -->
+<!-- ************ -->
 <!-- Teen Stag -->
 	<entity_class name="animalIceburgTeenStag" extends="animalStag">
 		<property name="Mass" value="135"/>
 		<property name="SizeScale" value="0.75"/>
 		<property name="ExperienceGain" value="184"/>
 		<property name="DeadBodyHitPoints" value="263"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="75"/>
 		</effect_group>
@@ -301,7 +399,6 @@
 		<property name="SizeScale" value="0.75"/>
 		<property name="ExperienceGain" value="100"/>
 		<property name="DeadBodyHitPoints" value="130"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="35"/>
 		</effect_group>
@@ -318,7 +415,6 @@
 		<property name="SizeScale" value="0.75"/>
 		<property name="ExperienceGain" value="130"/>
 		<property name="DeadBodyHitPoints" value="135"/>
-		<property name="HasRagdoll" value="false"/>
 		<property name="Weight" value="8"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="8"/>
@@ -335,7 +431,6 @@
 		<property name="SizeScale" value="0.75"/>
 		<property name="ExperienceGain" value="98"/>
 		<property name="DeadBodyHitPoints" value="131"/>
-		<property name="HasRagdoll" value="false"/>
 		<property name="Weight" value="8"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="8"/>
@@ -353,7 +448,6 @@
 		<property name="ExperienceGain" value=" 495"/> 
 		<property name="DeadBodyHitPoints" value="396"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenBear"/>
-		<property name="HasRagdoll" value="false"/>
 		<property name="Mass" value="150"/>
 		<property name="SizeScale" value="0.66"/>
 		<effect_group name="Base Effects">
@@ -373,7 +467,6 @@
 		<property name="ExperienceGain" value="495"/>
 		<property name="DeadBodyHitPoints" value="396"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenZombieBear"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="1320"/>
 		</effect_group>
@@ -391,7 +484,6 @@
 		<property name="ExperienceGain" value="300"/>
 		<property name="DeadBodyHitPoints" value="263"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenWolf"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="70"/>
 		</effect_group>
@@ -409,7 +501,6 @@
 		<property name="ExperienceGain" value="152"/>
 		<property name="DeadBodyHitPoints" value="150"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenCoyote"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="75"/>
 		</effect_group>
@@ -427,7 +518,6 @@
 		<property name="ExperienceGain" value="563"/>
 		<property name="DeadBodyHitPoints" value="338"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenDireWolf"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="563"/>
 		</effect_group>
@@ -445,7 +535,6 @@
 		<property name="ExperienceGain" value="375"/>
 		<property name="DeadBodyHitPoints" value="225"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenMountainLion"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="125"/>
 		</effect_group>
@@ -458,7 +547,6 @@
 	</entity_class>
 <!-- Teen Zombie Vulture -->
 	<entity_class name="animalIceburgTeenZombieVulture" extends="animalZombieVulture">
-		<property name="HasRagdoll" value="true"/>
 		<property name="Mass" value="35"/>
 		<property name="Mesh" value="Animals/Vulture/animalVultureStandardRagdoll"/>
 		<property name="SizeScale" value=".6"/>
@@ -475,12 +563,14 @@
 		</effect_group>
 	</entity_class>
 <!-- Teen Zombie Vulture Radiated -->
-	<entity_class name="animalIceburgTeenZombieVultureRadiated" extends="animalZombieVulture">
+	<entity_class name="animalIceburgTeenZombieVultureRadiated" extends="animalZombieVultureRadiated">
 		<property name="Mass" value="27"/>
-		<property name="SizeScale" value=".75"/>
+		<property name="SizeScale" value=".9"/>
 		<property name="HandItem" value="meleeHandAnimalIceburgTeenZombieVultureRadiated"/>
 		<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 		<property name="DeadBodyHitPoints" value="150"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
 		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="5"/> <!-- animalZombieVultureRadiated -->
 		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="26"/>
@@ -497,7 +587,6 @@
 		<property name="ExperienceGain" value="300"/>
 		<property name="DeadBodyHitPoints" value="263"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenZombieDog"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="150"/>
 		</effect_group>
@@ -516,7 +605,6 @@
 		<property name="ExperienceGain" value="98"/>
 		<property name="DeadBodyHitPoints" value="113"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenSnake"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="10"/>
 		</effect_group>
@@ -526,7 +614,6 @@
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="2"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="1"/>
 	</entity_class>
-
 <!-- Teen Boar -->
 	<entity_class name="animalIceburgTeenBoar" extends="animalBoar">
 		<property name="Mass" value="120"/>
@@ -534,7 +621,6 @@
 		<property name="ExperienceGain" value="135"/>
 		<property name="DeadBodyHitPoints" value="130"/>
 		<property name="HandItem" value="meleeHandanimalIceburgTeenBoar"/>
-		<property name="HasRagdoll" value="false"/>
 		<effect_group name="Base Effects">
 			<passive_effect name="HealthMax" operation="base_set" value="130"/>
 		</effect_group>
@@ -545,11 +631,67 @@
 		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
 		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
 	</entity_class>
-
-
+<!-- Teen Radiated Zombie Dog -->
+	<entity_class name="animalIceburgRadiatedTeenZombieDog" extends="animalZombieDog">
+		<property name="Mass" value="47"/>
+		<property name="SizeScale" value="0.75"/>
+		<property name="ExperienceGain" value="900"/>
+		<property name="DeadBodyHitPoints" value="263"/>
+		<property name="HandItem" value="meleeHandanimalIceburgRadiatedTeenZombieDog"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="600"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="1"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="11"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+	</entity_class>
+<!-- Teen Radiated Boar -->
+	<entity_class name="animalIceburgRadiatedTeenBoar" extends="animalIceburgRadiatedBoar">
+		<property name="Tags" value="entity,animal,hostile,boar,perkAT02,perkAT03,radiated"/>
+		<property name="ReplaceMaterial0" value="Entities/Animals/Boar/Materials/GRACE"/>
+	    <property name="ReplaceMaterial1" value="Entities/Animals/Boar/Materials/GRACE"/>
+		<property name="SizeScale" value="0.75"/>
+		<property name="ExperienceGain" value="900"/>
+		<property name="DeadBodyHitPoints" value="350"/>
+		<property name="HandItem" value="meleeHandanimalIceburgRadiatedTeenBoar"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="750"/>
+		</effect_group>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="15"/>
+		<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="3"/>
+		<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="2"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="7"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="3"/>
+	</entity_class>
+<!-- Teen Hostile Chicken -->
+	<entity_class name="animalIceburgTeenChickenHostile" extends="animalChickenHostile">
+		<property name="SizeScale" value="1.05"/>
+		<property name="Mass" value="23"/>
+		<property name="Weight" value="15"/>
+		<property name="HandItem" value="meleeHandanimalIceburgTeenCoyote"/>
+		<property name="MoveSpeedPanic" value="1.5"/>
+		<property name="ExperienceGain" value="130"/>
+		<property name="DeadBodyHitPoints" value="175"/>
+		<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
+		<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="5"/> <!-- animalChicken -->
+		<drop event="Harvest" name="resourceFeather" tag="butcherHarvest" count="12"/>
+		<drop event="Harvest" name="resourceBone" tag="butcherHarvest" count="8"/>
+		<drop event="Harvest" name="resourceBone" tag="allToolsHarvest" count="4"/>
+		<drop event="Harvest" name="foodRawMeat" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="resourceLeather" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<drop event="Harvest" name="resourceBone" count="1" tag="WasteTreasuresCompleteHarvest"/>
+		<effect_group name="Base Effects">
+			<passive_effect name="HealthMax" operation="base_set" value="100"/>
+		</effect_group>
+	</entity_class>
 
 <!-- King Animals -->
-
 <!-- Feral Animals -->
 <!-- Feral Deer -->
 <!--	<entity_class name="animalIceburgFeralDeer" extends="animalDoe">

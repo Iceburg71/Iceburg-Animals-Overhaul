@@ -1,484 +1,280 @@
 <Iceburg>
 
+<!-- Correct Bug???  with individual entity group ZombieDogGroup -->
+	<remove xpath="/entitygroups/entitygroup[@name='ZombieDogGroup']" />
+	<append xpath="/entitygroups">
+		<entitygroup name="ZombieDogGroup">
+		animalZombieDog
+		</entitygroup>
+	</append>
+
+<!-- ************************************************************************************** -->	
+<!-- re-proportion current animals to the proportions are the same after new ones are added -->
+<!-- prevents an overflow of animals -->
+<!-- ************************************************************************************** -->
+<!-- animalDoe -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDoe, 15')]" delim="\n" op="add" >animalDoe, 5</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDoe, 15')]" delim="\n" op="remove" >animalDoe, 15</csv>>
+
+<!-- animalChicken -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken, 25')]" delim="\n" op="add" >animalChicken, 5</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken, 25')]" delim="\n" op="remove" >animalChicken, 25</csv>>
+
+<!-- animalRabbit -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalRabbit, 25')]" delim="\n" op="add" >animalRabbit, 9</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalRabbit, 25')]" delim="\n" op="remove" >animalRabbit, 25</csv>>
+
+<!-- animalRabbit -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear, 5')]" delim="\n" op="add" >animalBear, 2</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear, 5')]" delim="\n" op="remove" >animalBear, 5</csv>>
+
+<!-- animalCoyote -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalCoyote, 30')]" delim="\n" op="add" >animalCoyote, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalCoyote, 30')]" delim="\n" op="remove" >animalCoyote, 30</csv>>
+
+<!-- animalMountainLion -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalMountainLion, 10')]" delim="\n" op="add" >animalMountainLion, 4</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalMountainLion, 10')]" delim="\n" op="remove" >animalMountainLion, 10</csv>>
+
+<!-- animalDireWolf -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 5')]" delim="\n" op="add" >animalDireWolf, 2</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 5')]" delim="\n" op="remove" >animalDireWolf, 5</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 3')]" delim="\n" op="add" >animalDireWolf, 1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 3')]" delim="\n" op="remove" >animalDireWolf, 3</csv>>
+
+<!-- animalZombieDog -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 9')]" delim="\n" op="add" >animalZombieDog, 3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 9')]" delim="\n" op="remove" >animalZombieDog, 9</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 30')]" delim="\n" op="add" >animalZombieDog, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 30')]" delim="\n" op="remove" >animalZombieDog, 30</csv>>
+
+<!-- animalZombieBear -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 3')]" delim="\n" op="add" >animalZombieBear, 1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 3')]" delim="\n" op="remove" >animalZombieBear, 3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 20')]" delim="\n" op="add" >animalZombieBear, 7</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 20')]" delim="\n" op="remove" >animalZombieBear, 20</csv>>
+
+<!-- animalSnake -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 10')]" delim="\n" op="add" >animalSnake, 4</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 10')]" delim="\n" op="remove" >animalSnake, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 20')]" delim="\n" op="add" >animalSnake, 7</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 20')]" delim="\n" op="remove" >animalSnake, 20</csv>>
+
+<!-- animalZombieVulture -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 20')]" delim="\n" op="add" >animalZombieVulture, 7</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 20')]" delim="\n" op="remove" >animalZombieVulture, 20</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 30')]" delim="\n" op="add" >animalZombieVulture, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 30')]" delim="\n" op="remove" >animalZombieVulture, 30</csv>>
+
+<!-- ***************** -->	
+<!-- New Adult Animals -->
+<!-- ***************** -->
+<!-- Add in Hostile Chicken to Groups -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken') and not(contains(., 'animalChicken,'))]" delim="\n" op="add" >animalChickenHostile</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken, 5')]" delim="\n" op="add" >animalChickenHostile, 4</csv>>
+
+<!-- ************ -->	
 <!-- Baby Animals -->
+<!-- ************ -->
 <!-- Add in Baby Deer to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and not(@prob='1')]]">
-		<entity name="animalIceburgBabyDeer" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and @prob='1']]">
-		<entity name="animalIceburgBabyDeer" prob="1" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDoe') and not(contains(., 'animalDoe,'))]" delim="\n" op="add" >animalIceburgBabyDeer</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDoe, 5')]" delim="\n" op="add" >animalIceburgBabyDeer, 5</csv>>
 
 <!-- Add in Baby Chicken to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and not(@prob='48')]]">
-		<entity name="animalIceburgBabyChicken" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and @prob='48']]">
-		<entity name="animalIceburgBabyChicken" prob="48" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken') and not(contains(., 'animalChicken,'))]" delim="\n" op="add" >animalIceburgBabyChicken</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken, 5')]" delim="\n" op="add" >animalIceburgBabyChicken, 4</csv>>
+
+<!-- Add in Baby Hostile Chicken to Groups -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken') and not(contains(., 'animalChicken,'))]" delim="\n" op="add" >animalIceburgBabyChickenHostile</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken, 5')]" delim="\n" op="add" >animalIceburgBabyChickenHostile, 4</csv>>
 
 <!-- Add in Baby Rabbit to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and not(@prob='48')]]">
-		<entity name="animalIceburgBabyRabbit" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and @prob='48']]">
-		<entity name="animalIceburgBabyRabbit" prob="48" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalRabbit') and not(contains(., 'animalRabbit,'))]" delim="\n" op="add" >animalIceburgBabyRabbit</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalRabbit, 9')]" delim="\n" op="add" >animalIceburgBabyRabbit, 8</csv>>
 
 <!-- Add in Baby Boar to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and not(@prob='1')]]">
-		<entity name="animalIceburgBabyBoar" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='1']]">
-		<entity name="animalIceburgBabyBoar" prob="1" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBoar') and not(contains(., 'animalBoar,'))]" delim="\n" op="add" >animalIceburgBabyBoar</csv>>
 
 <!-- Add in Baby Bear to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and not(@prob='0.1' or @prob='10' or @prob='3')]]">
-		<entity name="animalIceburgBabyBear" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='0.1']]">
-		<entity name="animalIceburgBabyBear" prob="0.1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='10']]">
-		<entity name="animalIceburgBabyBear" prob="10" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='3']]">
-		<entity name="animalIceburgBabyBear" prob="3" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear') and not(contains(., 'animalRabbit,'))]" delim="\n" op="add" >animalIceburgBabyBear</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear, .1')]" delim="\n" op="add" >animalIceburgBabyBear, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear, 2')]" delim="\n" op="add" >animalIceburgBabyBear, 2</csv>>
 
 <!-- Add in Baby Wolf to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and not(@prob='.1' or @prob='.3' or @prob='.4' or @prob='.8' or @prob='1' or @prob='9')]]">
-		<entity name="animalIceburgBabyWolf" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.1']]">
-		<entity name="animalIceburgBabyWolf" prob=".1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.3']]">
-		<entity name="animalIceburgBabyWolf" prob=".3" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.4']]">
-		<entity name="animalIceburgBabyWolf" prob=".4" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.8']]">
-		<entity name="animalIceburgBabyWolf" prob=".8" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='1']]">
-		<entity name="animalIceburgBabyWolf" prob="1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='9']]">
-		<entity name="animalIceburgBabyWolf" prob="9" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf') and not(contains(., 'animalWolf,'))]" delim="\n" op="add" >animalIceburgBabyWolf</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .1')]" delim="\n" op="add" >animalIceburgBabyWolf, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .3')]" delim="\n" op="add" >animalIceburgBabyWolf, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .4')]" delim="\n" op="add" >animalIceburgBabyWolf, .4</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .8')]" delim="\n" op="add" >animalIceburgBabyWolf, .8</csv>>
 
 <!-- Add in Baby Coyote to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and not(@prob='30')]]">
-		<entity name="animalIceburgBabyCoyote" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and @prob='30']]">
-		<entity name="animalIceburgBabyCoyote" prob="30" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalCoyote') and not(contains(., 'animalCoyote,'))]" delim="\n" op="add" >animalIceburgBabyCoyote</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalCoyote, 10')]" delim="\n" op="add" >animalIceburgBabyCoyote, 10</csv>>
 
 <!-- Add in Baby Mountain Lion to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and not(@prob='25')]]">
-		<entity name="animalIceburgBabyMountainLion" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and @prob='25']]">
-		<entity name="animalIceburgBabyMountainLion" prob="25" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalMountainLion') and not(contains(., 'animalMountainLion,'))]" delim="\n" op="add" >animalIceburgBabyMountainLion</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalMountainLion, 4')]" delim="\n" op="add" >animalIceburgBabyMountainLion, 3</csv>>
 
 <!-- Add in Baby Dire Wolf to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and not(@prob='.05' or @prob='.1' or @prob='10' or @prob='3' or @prob='0.5')]]">
-		<entity name="animalIceburgBabyDireWolf" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='.05']]">
-		<entity name="animalIceburgBabyDireWolf" prob=".05" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='.1']]">
-		<entity name="animalIceburgBabyDireWolf" prob=".1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='10']]">
-		<entity name="animalIceburgBabyDireWolf" prob="10" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='3']]">
-		<entity name="animalIceburgBabyDireWolf" prob="3" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='0.5']]">
-		<entity name="animalIceburgBabyDireWolf" prob="0.5" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf') and not(contains(., 'animalDireWolf,'))]" delim="\n" op="add" >animalIceburgBabyDireWolf</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, .05')]" delim="\n" op="add" >animalIceburgBabyDireWolf, .05</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, .1')]" delim="\n" op="add" >animalIceburgBabyDireWolf, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 2')]" delim="\n" op="add" >animalIceburgBabyDireWolf, 2</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 1')]" delim="\n" op="add" >animalIceburgBabyDireWolf, 1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, .5')]" delim="\n" op="add" >animalIceburgBabyDireWolf, .5</csv>>
 
 <!-- Add in Baby Zombie Dog to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and not(@prob='0.05' or @prob='.1' or @prob='.3' or @prob='.4' or @prob='.8' or @prob='0.15' or @prob='9' or @prob='30' or @prob='4')]]">
-		<entity name="animalIceburgBabyZombieDog"/>
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.05']]">
-		<entity name="animalIceburgBabyZombieDog" prob="0.05" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.1']]">
-		<entity name="animalIceburgBabyZombieDog" prob="0.15" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.3']]">
-		<entity name="animalIceburgBabyZombieDog" prob="9" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.4']]">
-		<entity name="animalIceburgBabyZombieDog" prob="30" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.8']]">
-		<entity name="animalIceburgBabyZombieDog" prob="4" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.15']]">
-		<entity name="animalIceburgBabyZombieDog" prob="0.15" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='9']]">
-		<entity name="animalIceburgBabyZombieDog" prob="9" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='30']]">
-		<entity name="animalIceburgBabyZombieDog" prob="30" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='4']]">
-		<entity name="animalIceburgBabyZombieDog" prob="4" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog') and not(contains(., 'animalZombieDog,'))]" delim="\n" op="add" >animalIceburgBabyZombieDog</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .15')]" delim="\n" op="add" >animalIceburgBabyZombieDog, .15</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .05')]" delim="\n" op="add" >animalIceburgBabyZombieDog, .05</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 3')]" delim="\n" op="add" >animalIceburgBabyZombieDog, 3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 10')]" delim="\n" op="add" >animalIceburgBabyZombieDog, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .95')]" delim="\n" op="add" >animalIceburgBabyZombieDog, .95</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .1')]" delim="\n" op="add" >animalIceburgBabyZombieDog, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .3')]" delim="\n" op="add" >animalIceburgBabyZombieDog, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .4')]" delim="\n" op="add" >animalIceburgBabyZombieDog, .4</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .8')]" delim="\n" op="add" >animalIceburgBabyZombieDog, .8</csv>>
 
 <!-- Add in Baby Zombie Bear to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and not(@prob='0.1' or @prob='0.05' or @prob='3' or @prob='20')]]">
-		<entity name="animalIceburgBabyZombieBear" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.1']]">
-		<entity name="animalIceburgBabyZombieBear" prob="0.1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.05']]">
-		<entity name="animalIceburgBabyZombieBear" prob="0.05" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='3']]">
-		<entity name="animalIceburgBabyZombieBear" prob="3" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='20']]">
-		<entity name="animalIceburgBabyZombieBear" prob="20" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear') and not(contains(., 'animalZombieBear,'))]" delim="\n" op="add" >animalIceburgBabyZombieBear</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 1')]" delim="\n" op="add" >animalIceburgBabyZombieBear, 1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, .05')]" delim="\n" op="add" >animalIceburgBabyZombieBear, .05</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 7')]" delim="\n" op="add" >animalIceburgBabyZombieBear, 6</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, .1')]" delim="\n" op="add" >animalIceburgBabyZombieBear, .1</csv>>
 
 <!-- Add in Baby Snake to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and not(@prob='10' or @prob='20')]]">
-		<entity name="animalIceburgBabySnake" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='10']]">
-		<entity name="animalIceburgBabySnake" prob="10" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='20']]">
-		<entity name="animalIceburgBabySnake" prob="20" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake') and not(contains(., 'animalSnake,'))]" delim="\n" op="add" >animalIceburgBabySnake</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 4')]" delim="\n" op="add" >animalIceburgBabySnake, 3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 7')]" delim="\n" op="add" >animalIceburgBabySnake, 6</csv>>
 
 <!-- Add in Baby Zombie Vulture to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and not(@prob='0.6' or @prob='20' or @prob='30' or @prob='0.114' or @prob='0.119' or @prob='0.132' or @prob='0.118' or @prob='0.127' or @prob='0.12' or @prob='0.13' or @prob='0.16' or @prob='0.2' or @prob='0.24' or @prob='0.29' or @prob='0.3')]]">
-		<entity name="animalIceburgBabyZombieVulture" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.6']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.6" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='20']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="20" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='30']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="30" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.114']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.114" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.119']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.119" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.132']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.132" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.118']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.118" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.127']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.127" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.12']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.12" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.13']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.13" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.16']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.16" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.2']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.2" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.24']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.24" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.29']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.29" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.3']]">
-		<entity name="animalIceburgBabyZombieVulture" prob="0.3" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture') and not(contains(., 'animalZombieVulture,')) and not(contains(., 'animalZombieVultureRadiated'))]" delim="\n" op="add" >animalIceburgBabyZombieVulture</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 10')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .114')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .114</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .119')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .119</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .132')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .132</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .118')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .118</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .127')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .127</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .12')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .12</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .13')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .13</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .16')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .16</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .2')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .2</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .24')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .24</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .29')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .29</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .3')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .6')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, .6</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 7')]" delim="\n" op="add" >animalIceburgBabyZombieVulture, 6</csv>>
 
 <!-- Add in Baby Zombie Vulture Radiated to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and not(@prob='0.4' or @prob='0.16' or @prob='0.27' or @prob='0.29' or @prob='0.3')]]">
-		<entity name="animalIceburgBabyZombieVultureRadiated" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.4']]">
-		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.4" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.16']]">
-		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.16" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.27']]">
-		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.27" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.29']]">
-		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.29" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.3']]">
-		<entity name="animalIceburgBabyZombieVultureRadiated" prob="0.3" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated') and not(contains(., 'animalZombieVultureRadiated,'))]" delim="\n" op="add" >animalIceburgBabyZombieVulture</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .16')]" delim="\n" op="add" >animalIceburgBabyZombieVultureRadiated, .16</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .27')]" delim="\n" op="add" >animalIceburgBabyZombieVultureRadiated, .27</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .29')]" delim="\n" op="add" >animalIceburgBabyZombieVultureRadiated, .29</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .3')]" delim="\n" op="add" >animalIceburgBabyZombieVultureRadiated, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .4')]" delim="\n" op="add" >animalIceburgBabyZombieVultureRadiated, .4</csv>>
 
+<!-- ************ -->
 <!-- Teen Animals -->
+<!-- ************ -->
 <!-- Add in Teen Doe to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and not(@prob='1')]]">
-		<entity name="animalIceburgTeenDoe" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDoe' and @prob='1']]">
-		<entity name="animalIceburgTeenDoe" prob="1" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDoe') and not(contains(., 'animalDoe,'))]" delim="\n" op="add" >animalIceburgTeenDoe</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDoe, 5')]" delim="\n" op="add" >animalIceburgTeenDoe, 5</csv>>
 
 <!-- Add in Teen Stag to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalStag' and not(@prob='1')]]">
-		<entity name="animalIceburgTeenStag" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalStag' and @prob='1']]">
-		<entity name="animalIceburgTeenStag" prob="1" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalStag') and not(contains(., 'animalStag,'))]" delim="\n" op="add" >animalIceburgTeenStag</csv>>
 
 <!-- Add in Teen Chicken to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and not(@prob='48')]]">
-		<entity name="animalIceburgTeenChicken" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalChicken' and @prob='48']]">
-		<entity name="animalIceburgTeenChicken" prob="48" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken') and not(contains(., 'animalChicken,'))]" delim="\n" op="add" >animalIceburgTeenChicken</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken, 5')]" delim="\n" op="add" >animalIceburgTeenChicken, 4</csv>>
+
+<!-- Add in Teen Hostile Chicken to Groups -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken') and not(contains(., 'animalChicken,'))]" delim="\n" op="add" >animalIceburgBabyChickenHostile</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalChicken, 5')]" delim="\n" op="add" >animalIceburgTeenChickenHostile, 4</csv>>
 
 <!-- Add in Teen Rabbit to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and not(@prob='48')]]">
-		<entity name="animalIceburgTeenRabbit" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalRabbit' and @prob='48']]">
-		<entity name="animalIceburgTeenRabbit" prob="48" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalRabbit') and not(contains(., 'animalRabbit,'))]" delim="\n" op="add" >animalIceburgTeenRabbit</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalRabbit, 9')]" delim="\n" op="add" >animalIceburgTeenRabbit, 8</csv>>
 
 <!-- Add in Teen Boar to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and not(@prob='1')]]">
-		<entity name="animalIceburgTeenBoar" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBoar' and @prob='1']]">
-		<entity name="animalIceburgTeenBoar" prob="1" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBoar') and not(contains(., 'animalBoar,'))]" delim="\n" op="add" >animalIceburgTeenBoar</csv>>
 
 <!-- Add in Teen Bear to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and not(@prob='0.1' or @prob='10' or @prob='3')]]">
-		<entity name="animalIceburgTeenBear" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='0.1']]">
-		<entity name="animalIceburgTeenBear" prob="0.1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='10']]">
-		<entity name="animalIceburgTeenBear" prob="10" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalBear' and @prob='3']]">
-		<entity name="animalIceburgTeenBear" prob="3" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear') and not(contains(., 'animalRabbit,'))]" delim="\n" op="add" >animalIceburgTeenBear</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear, .1')]" delim="\n" op="add" >animalIceburgTeenBear, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalBear, 2')]" delim="\n" op="add" >animalIceburgTeenBear, 2</csv>>
 
 <!-- Add in Teen Wolf to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and not(@prob='.1' or @prob='.3' or @prob='.4' or @prob='.8' or @prob='1' or @prob='9')]]">
-		<entity name="animalIceburgTeenWolf" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.1']]">
-		<entity name="animalIceburgTeenWolf" prob="1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.3']]">
-		<entity name="animalIceburgTeenWolf" prob="9" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.4']]">
-		<entity name="animalIceburgTeenWolf" prob="1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='.8']]">
-		<entity name="animalIceburgTeenWolf" prob="9" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='1']]">
-		<entity name="animalIceburgTeenWolf" prob="1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalWolf' and @prob='9']]">
-		<entity name="animalIceburgTeenWolf" prob="9" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf') and not(contains(., 'animalWolf,'))]" delim="\n" op="add" >animalIceburgTeenWolf</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .1')]" delim="\n" op="add" >animalIceburgTeenWolf, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .3')]" delim="\n" op="add" >animalIceburgTeenWolf, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .4')]" delim="\n" op="add" >animalIceburgTeenWolf, .4</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalWolf, .8')]" delim="\n" op="add" >animalIceburgTeenWolf, .8</csv>>
 
 <!-- Add in Teen Coyote to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and not(@prob='30')]]">
-		<entity name="animalIceburgTeenCoyote" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalCoyote' and @prob='30']]">
-		<entity name="animalIceburgTeenCoyote" prob="30" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalCoyote') and not(contains(., 'animalCoyote,'))]" delim="\n" op="add" >animalIceburgTeenCoyote</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalCoyote, 10')]" delim="\n" op="add" >animalIceburgTeenCoyote, 10</csv>>
 
 <!-- Add in Teen Mountain Lion to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and not(@prob='25')]]">
-		<entity name="animalIceburgTeenMountainLion" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalMountainLion' and @prob='25']]">
-		<entity name="animalIceburgTeenMountainLion" prob="25" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalMountainLion') and not(contains(., 'animalMountainLion,'))]" delim="\n" op="add" >animalIceburgTeenMountainLion</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalMountainLion, 4')]" delim="\n" op="add" >animalIceburgTeenMountainLion, 3</csv>>
 
 <!-- Add in Teen Dire Wolf to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and not(@prob='.05' or @prob='.1' or @prob='10' or @prob='3' or @prob='0.5')]]">
-		<entity name="animalIceburgTeenDireWolf" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='.05']]">
-		<entity name="animalIceburgTeenDireWolf" prob="10" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='.1']]">
-		<entity name="animalIceburgTeenDireWolf" prob="3" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='10']]">
-		<entity name="animalIceburgTeenDireWolf" prob="10" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='3']]">
-		<entity name="animalIceburgTeenDireWolf" prob="3" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalDireWolf' and @prob='0.5']]">
-		<entity name="animalIceburgTeenDireWolf" prob="0.5" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf') and not(contains(., 'animalDireWolf,'))]" delim="\n" op="add" >animalIceburgTeenDireWolf</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, .05')]" delim="\n" op="add" >animalIceburgTeenDireWolf, .05</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, .1')]" delim="\n" op="add" >animalIceburgTeenDireWolf, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 2')]" delim="\n" op="add" >animalIceburgTeenDireWolf, 2</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, 1')]" delim="\n" op="add" >animalIceburgTeenDireWolf, 1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalDireWolf, .5')]" delim="\n" op="add" >animalIceburgTeenDireWolf, .5</csv>>
 
 <!-- Add in Teen Zombie Dog to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and not(@prob='0.05' or @prob='.1' or @prob='.3' or @prob='.4' or @prob='.8' or @prob='0.15' or @prob='9' or @prob='30' or @prob='4')]]">
-		<entity name="animalIceburgTeenZombieDog"/>
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.05']]">
-		<entity name="animalIceburgTeenZombieDog" prob=".05" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.1']]">
-		<entity name="animalIceburgTeenZombieDog" prob="0.1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.3']]">
-		<entity name="animalIceburgTeenZombieDog" prob=".3" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.4']]">
-		<entity name="animalIceburgTeenZombieDog" prob=".4" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='.8']]">
-		<entity name="animalIceburgTeenZombieDog" prob=".8" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='0.15']]">
-		<entity name="animalIceburgTeenZombieDog" prob="0.15" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='9']]">
-		<entity name="animalIceburgTeenZombieDog" prob="9" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='30']]">
-		<entity name="animalIceburgTeenZombieDog" prob="30" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieDog' and @prob='4']]">
-		<entity name="animalIceburgTeenZombieDog" prob="4" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog') and not(contains(., 'animalZombieDog,'))]" delim="\n" op="add" >animalIceburgTeenZombieDog</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .15')]" delim="\n" op="add" >animalIceburgTeenZombieDog, .15</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .05')]" delim="\n" op="add" >animalIceburgTeenZombieDog, .05</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 3')]" delim="\n" op="add" >animalIceburgTeenZombieDog, 3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, 10')]" delim="\n" op="add" >animalIceburgTeenZombieDog, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .95')]" delim="\n" op="add" >animalIceburgTeenZombieDog, .95</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .1')]" delim="\n" op="add" >animalIceburgTeenZombieDog, .1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .3')]" delim="\n" op="add" >animalIceburgTeenZombieDog, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .4')]" delim="\n" op="add" >animalIceburgTeenZombieDog, .4</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieDog, .8')]" delim="\n" op="add" >animalIceburgTeenZombieDog, .8</csv>>
 
 <!-- Add in Teen Zombie Bear to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and not(@prob='0.1' or @prob='0.05' or @prob='3' or @prob='20')]]">
-		<entity name="animalIceburgTeenZombieBear" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.1']]">
-		<entity name="animalIceburgTeenZombieBear" prob="0.1" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='0.05']]">
-		<entity name="animalIceburgTeenZombieBear" prob="0.05" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='3']]">
-		<entity name="animalIceburgTeenZombieBear" prob="3" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieBear' and @prob='20']]">
-		<entity name="animalIceburgTeenZombieBear" prob="20" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear') and not(contains(., 'animalZombieBear,'))]" delim="\n" op="add" >animalIceburgTeenZombieBear</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 1')]" delim="\n" op="add" >animalIceburgTeenZombieBear, 1</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, .05')]" delim="\n" op="add" >animalIceburgTeenZombieBear, .05</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, 7')]" delim="\n" op="add" >animalIceburgTeenZombieBear, 7</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieBear, .1')]" delim="\n" op="add" >animalIceburgTeenZombieBear, .1</csv>>
 
 <!-- Add in Teen Snake to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and not(@prob='10' or @prob='20')]]">
-		<entity name="animalIceburgTeenSnake" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='10']]">
-		<entity name="animalIceburgTeenSnake" prob="10" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalSnake' and @prob='20']]">
-		<entity name="animalIceburgTeenSnake" prob="20" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake') and not(contains(., 'animalSnake,'))]" delim="\n" op="add" >animalIceburgTeenSnake</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 4')]" delim="\n" op="add" >animalIceburgTeenSnake, 3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalSnake, 7')]" delim="\n" op="add" >animalIceburgTeenSnake, 7</csv>>
 
 <!-- Add in Teen Zombie Vulture to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and not(@prob='0.6' or @prob='20' or @prob='30' or @prob='0.114' or @prob='0.119' or @prob='0.132' or @prob='0.118' or @prob='0.127' or @prob='0.12' or @prob='0.13' or @prob='0.16' or @prob='0.2' or @prob='0.24' or @prob='0.29' or @prob='0.3')]]">
-		<entity name="animalIceburgTeenZombieVulture" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.6']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.6" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='20']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="20" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='30']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="30" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.114']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.114" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.119']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.119" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.132']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.132" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.118']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.118" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.127']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.127" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.12']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.12" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.13']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.13" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.16']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.16" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.2']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.2" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.24']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.24" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.29']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.29" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVulture' and @prob='0.3']]">
-		<entity name="animalIceburgTeenZombieVulture" prob="0.3" />
-	</append>
-	
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture') and not(contains(., 'animalZombieVulture,')) and not(contains(., 'animalZombieVultureRadiated'))]" delim="\n" op="add" >animalIceburgTeenZombieVulture</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 10')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, 10</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .114')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .114</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .119')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .119</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .132')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .132</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .118')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .118</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .127')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .127</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .12')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .12</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .13')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .13</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .16')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .16</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .2')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .2</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .24')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .24</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .29')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .29</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .3')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, .6')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, .6</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVulture, 7')]" delim="\n" op="add" >animalIceburgTeenZombieVulture, 7</csv>>
+
 <!-- Add in Teen Zombie Vulture Radiated to Groups -->
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and not(@prob='0.4' or @prob='0.16' or @prob='0.27' or @prob='0.29' or @prob='0.3')]]">
-		<entity name="animalIceburgTeenZombieVultureRadiated" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.4']]">
-		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.4" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.16']]">
-		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.16" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.27']]">
-		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.27" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.29']]">
-		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.29" />
-	</append>
-	<append xpath="/entitygroups/entitygroup[descendant::entity[@name='animalZombieVultureRadiated' and @prob='0.3']]">
-		<entity name="animalIceburgTeenZombieVultureRadiated" prob="0.3" />
-	</append>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated') and not(contains(., 'animalZombieVultureRadiated,'))]" delim="\n" op="add" >animalIceburgTeenZombieVulture</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .16')]" delim="\n" op="add" >animalIceburgTeenZombieVultureRadiated, .16</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .27')]" delim="\n" op="add" >animalIceburgTeenZombieVultureRadiated, .27</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .29')]" delim="\n" op="add" >animalIceburgTeenZombieVultureRadiated, .29</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .3')]" delim="\n" op="add" >animalIceburgTeenZombieVultureRadiated, .3</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'animalZombieVultureRadiated, .4')]" delim="\n" op="add" >animalIceburgTeenZombieVultureRadiated, .4</csv>>
 
 <!-- Add in Feral Deer to Groups -->
 <!--
@@ -492,5 +288,31 @@
 		<entity name="animalIceburgFeralDeer" prob="1" />
 	</append>
 -->
+
+<!-- ********* -->	
+<!-- Fix nones -->
+<!-- ********* -->
+<!-- 40 -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 40')]" delim="\n" op="add" >none, 41</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 40')]" delim="\n" op="remove" >none, 40</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 41')]" delim="\n" op="add" >none, 40</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 41')]" delim="\n" op="remove" >none, 41</csv>>
+<!-- 50 -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 50')]" delim="\n" op="add" >none, 51</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 50')]" delim="\n" op="remove" >none, 50</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 51')]" delim="\n" op="add" >none, 50</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 51')]" delim="\n" op="remove" >none, 51</csv>>
+<!-- 80 -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 80')]" delim="\n" op="add" >none, 81</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 80')]" delim="\n" op="remove" >none, 80</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 81')]" delim="\n" op="add" >none, 80</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 81')]" delim="\n" op="remove" >none, 81</csv>>
+<!-- 85 -->
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 85')]" delim="\n" op="add" >none, 86</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 85')]" delim="\n" op="remove" >none, 85</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 86')]" delim="\n" op="add" >none, 85</csv>>
+	<csv xpath="/entitygroups/entitygroup/text()[contains(., 'none, 86')]" delim="\n" op="remove" >none, 86</csv>>
+
+
 
 </Iceburg>
